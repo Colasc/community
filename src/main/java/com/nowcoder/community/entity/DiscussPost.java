@@ -1,16 +1,29 @@
 package com.nowcoder.community.entity;
 
-import java.util.Date;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.util.Date;
+@Document(indexName = "discusspost",shards = 6,replicas =3 )
 public class DiscussPost {
-     int id;
-     int userId;
+    @Id
+     Integer id;
+    @Field(type = FieldType.Integer)
+     Integer userId;
+    @Field(type = FieldType.Text ,analyzer = "ik_max_word",searchAnalyzer = "ik_smart")
      String title;
+    @Field(type = FieldType.Text ,analyzer = "ik_max_word",searchAnalyzer = "ik_smart")
      String content;
-     int type;
-     int status;
+    @Field(type = FieldType.Integer)
+     Integer type;
+    @Field(type = FieldType.Integer)
+     Integer status;
+    @Field(type = FieldType.Date)
      Date createTime;
-     int commentCount;
+    @Field(type = FieldType.Integer)
+     Integer commentCount;
      double score;
 
     @Override
@@ -28,7 +41,7 @@ public class DiscussPost {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -36,7 +49,7 @@ public class DiscussPost {
         this.id = id;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
@@ -60,7 +73,7 @@ public class DiscussPost {
         this.content = content;
     }
 
-    public int getType() {
+    public Integer getType() {
         return type;
     }
 
@@ -68,7 +81,7 @@ public class DiscussPost {
         this.type = type;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
@@ -84,7 +97,7 @@ public class DiscussPost {
         this.createTime = createTime;
     }
 
-    public int getCommentCount() {
+    public Integer getCommentCount() {
         return commentCount;
     }
 

@@ -3,18 +3,21 @@ package com.nowcoder.community.entity;
 import java.util.Date;
 
 public class User {
-     int id;
-     String username;
-     String password;
-     String salt;
-     String email;
-     int type;
-     int status;
-     String activationCode;
-     String headerUrl;
-     Date createTime;
+    Integer id;
+    String username;
+    String password;
+    String salt;
+    String email;
+    Integer type;
+    Integer status;
+    String activationCode;
+    String headerUrl;
+    Date createTime;
 
-    public User(int id, String username, String password, String salt, String email, int type, int status, String activationCode, String headerUrl, Date createTime) {
+    public User() {
+    }
+
+    public User(Integer id, String username, String password, String salt, String email, Integer type, Integer status, String activationCode, String headerUrl, Date createTime) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -43,11 +46,11 @@ public class User {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -83,19 +86,19 @@ public class User {
         this.email = email;
     }
 
-    public int getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
